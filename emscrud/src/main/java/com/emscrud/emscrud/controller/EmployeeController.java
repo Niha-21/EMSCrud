@@ -16,7 +16,7 @@ import com.emscrud.emscrud.Employee;
 import com.emscrud.emscrud.service.EmployeeService;
 
 @RestController
-public class controller {
+public class EmployeeController {
     
     @Autowired
     EmployeeService employeeService;
