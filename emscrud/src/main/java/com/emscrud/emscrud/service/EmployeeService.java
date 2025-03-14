@@ -10,5 +10,5 @@ public interface EmployeeService {
 
     public List<Employee> getEmployees();
 
-    public String deleteEmployee(int id);
+    public String deleteEmployee(Long id);
 }
