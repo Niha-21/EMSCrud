@@ -20,7 +20,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public String createEmployee(Employee emp) {
-        // TODO Auto-generated method stub
 
         EmployeeEntity employeeEntity = new EmployeeEntity();
 
@@ -32,7 +31,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> getEmployees() {
-        // TODO Auto-generated method stub
 
         List<EmployeeEntity> employeeEntityList = new ArrayList<>();
         employeeEntityList = employeeRepository.findAll();
@@ -50,11 +48,33 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public String deleteEmployee(Long id) {
-        // TODO Auto-generated method stub
 
         employeeRepository.deleteById(id);
 
         return "Deleted Successfully!";
+    }
+
+    @Override
+    public String updateEmployee(Long id, Employee emp) {
+        
+        EmployeeEntity employeeEntity = employeeRepository.findById(id).get();
+        
+        employeeEntity.setName(emp.getName());
+        employeeEntity.setEmail(emp.getEmail());
+        employeeEntity.setAddress(emp.getAddress());
+        employeeRepository.save(employeeEntity);
+
+        return "Updated Successfully!";
+    }
+
+    @Override
+    public Employee getEmployeeById(Long id) {
+
+        EmployeeEntity employeeEntity = employeeRepository.findById(id).get();
+        Employee employee = new Employee();
+        BeanUtils.copyProperties(employeeEntity, employee);
+
+        return employee;
     }
 
 }
