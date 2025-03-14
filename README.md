@@ -9,8 +9,8 @@ Lombok to reduce boilerplate code
 
 
 This application performs the following operations - 
-Get List of all employees
-Get an employee based on Id
-Create a new employee
-Update existing employee details
-Delete an employees data by Id
+1. Get List of all employees
+2. Get an employee based on Id
+3. Create a new employee
+4. Update existing employee details
+5. Delete an employees data by Id
